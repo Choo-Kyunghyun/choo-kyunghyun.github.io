@@ -1,0 +1,14 @@
+html {
+    background-color: #1e1e1e;
+    color: #b4b4b4;
+}
+
+body {
+    text-align: center;
+}
+
+#contact {
+    color: #d0bcff;
+    font-weight: bold;
+    text-decoration: none;
+}
