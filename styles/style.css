@@ -7,6 +7,10 @@ body {
     text-align: center;
 }
 
+#profile {
+    border-radius: 10%;
+}
+
 #contact {
     color: #d0bcff;
     font-weight: bold;
