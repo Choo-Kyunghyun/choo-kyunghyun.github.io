@@ -59,10 +59,12 @@ a:hover {
     color: #ffffff;
     padding: 5%;
     border-radius: 10px;
+    transition: all 0.25s;
 }
 
 .description:hover {
     background-color: rgba(46, 46, 46, 0.9);
+    transform: scale(1.05);
 }
 
 #top {
