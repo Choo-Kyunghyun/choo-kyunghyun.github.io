@@ -42,8 +42,8 @@ a:hover {
 
 .icon {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 12%;
+    height: 12%;
     transition: all 0.25s;
     margin-right: 8%;
 }
