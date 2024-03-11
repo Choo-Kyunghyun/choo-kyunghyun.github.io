@@ -37,6 +37,11 @@ a:hover {
     color: var(--color-highlight-hover);
 }
 
+ul {
+    line-height: 2;
+    list-style-image: none;
+}
+
 .panel {
     display: flex;
     align-items: center;
@@ -76,6 +81,19 @@ a:hover {
     transform: scale(1.05);
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-surface);
+}
+
+.box {
+    flex: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: var(--color-primary);
+}
+
 #top {
     background-color: var(--color-primary);
     position: fixed;
@@ -107,5 +125,5 @@ a:hover {
 #skills div {
     background-color: var(--color-primary);
     width: 50%;
-    height: 240px;
+    height: 360px;
 }
