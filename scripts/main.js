@@ -8,6 +8,10 @@ function randomColor() {
     return color;
 }
 
+class Shaker {
+
+}
+
 class Showcase {
     constructor(elementId, items) {
         this.canvas = document.getElementById(elementId);
