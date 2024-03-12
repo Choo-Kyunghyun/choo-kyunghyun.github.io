@@ -9,8 +9,40 @@ function randomColor() {
 }
 
 class Shaker {
+    constructor(elementId) {
+        this.original = document.getElementById(elementId);
+        this.div = document.createElement("div");
 
+        this.speed = 30;
+        this.range = 4;
+
+        this.build();
+        this.shake();
+    }
+
+    build() {
+        var character;
+        for (var i = 0; i < this.original.textContent.length; i++) {
+            character = document.createElement("span");
+            character.textContent = this.original.textContent[i];
+            this.div.appendChild(character);
+        }
+        this.original.textContent = "";
+        this.original.appendChild(this.div);
+    }
+
+    shake() {
+        var characters = this.div.children;
+        for (var i = 0; i < characters.length; i++) {
+            characters[i].style.position = "relative";
+            characters[i].style.left = Math.random() * this.range - this.range / 2 + "px";
+            characters[i].style.top = Math.random() * this.range - this.range / 2 + "px";
+        }
+        setTimeout(() => this.shake(), this.speed);
+    }
 }
+
+var shaker = new Shaker("shaker");
 
 class Showcase {
     constructor(elementId, items) {
