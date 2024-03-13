@@ -8,6 +8,14 @@ function randomColor() {
     return color;
 }
 
+function random(array) {
+    var index = Math.floor(Math.random() * array.length);
+    return array[index];
+}
+
+var splash = ["Don't touch my gun!", "Medic!", "Help!"];
+document.getElementById("shaker").textContent = random(splash);
+
 class Shaker {
     constructor(elementId) {
         this.original = document.getElementById(elementId);
