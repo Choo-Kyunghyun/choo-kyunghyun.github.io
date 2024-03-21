@@ -1,5 +1,6 @@
 "use strict";
 
+// Return a random color
 function randomColor() {
     var color = "#";
     for (var i = 0; i < 3; i++) {
@@ -8,26 +9,33 @@ function randomColor() {
     return color;
 }
 
+// Return a random element from an array
 function random(array) {
     var index = Math.floor(Math.random() * array.length);
     return array[index];
 }
 
-var splash = ["Don't touch my gun!", "Medic!", "Help!"];
+// Change the splash text
+var splash = ["Don't touch my gun!", "Medic!", "Help!", "Push the cart!", "I need some doggone help!"];
 document.getElementById("shaker").textContent = random(splash);
 
+// Shaker class
 class Shaker {
     constructor(elementId) {
+        // Get the original element and create a new div
         this.original = document.getElementById(elementId);
         this.div = document.createElement("div");
 
+        // Set the speed and range
         this.speed = 30;
         this.range = 4;
 
+        // Build and shake the text
         this.build();
         this.shake();
     }
 
+    // Build the text
     build() {
         var character;
         for (var i = 0; i < this.original.textContent.length; i++) {
@@ -39,6 +47,7 @@ class Shaker {
         this.original.appendChild(this.div);
     }
 
+    // Shake the text
     shake() {
         var characters = this.div.children;
         for (var i = 0; i < characters.length; i++) {
@@ -50,21 +59,27 @@ class Shaker {
     }
 }
 
+// Create a new shaker
 var shaker = new Shaker("shaker");
 
+// Showcase class
 class Showcase {
     constructor(elementId, items) {
+        // Get the canvas and context
         this.canvas = document.getElementById(elementId);
         this.ctx = this.canvas.getContext("2d");
         this.data = [];
 
+        // Build, resize and draw the text
         this.build(document.querySelectorAll(items));
         this.resize();
         this.draw();
 
+        // Resize the canvas when the window is resized
         window.addEventListener("resize", () => this.resize());
     }
 
+    // Resize the canvas
     resize() {
         var ratio = window.devicePixelRatio || 1;
         this.canvas.width = this.canvas.offsetWidth * ratio;
@@ -73,6 +88,7 @@ class Showcase {
         this.ctx.font = "bold 20px Arial";
     }
 
+    // Draw the text
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         for (var i = 0; i < this.data.length; i++) {
@@ -87,6 +103,7 @@ class Showcase {
         requestAnimationFrame(() => this.draw());
     }
 
+    // Build the text
     build(elements) {
         var texts = [];
         for (var i = 0; i < elements.length; i++) {
@@ -104,6 +121,7 @@ class Showcase {
         }
     }
 
+    // Arrange the text
     arrange(item) {
         item.x = -300;
         item.y = Math.random() * (this.canvas.height - 20);
@@ -112,4 +130,5 @@ class Showcase {
     }
 }
 
+// Create a new showcase
 var showcase = new Showcase("showcase", "#showcase li");
